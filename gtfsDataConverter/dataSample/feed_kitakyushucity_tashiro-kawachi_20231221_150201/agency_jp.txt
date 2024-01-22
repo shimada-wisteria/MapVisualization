@@ -1,0 +1,2 @@
+"agency_id","agency_official_name","agency_zip_number","agency_address","agency_president_pos","agency_president_name"
+"5290801003473","株式会社第一交通","8050061","八幡東区西本町四丁目3番19号","代表取締役","野口　和之"

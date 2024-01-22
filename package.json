@@ -1,0 +1,16 @@
+{
+  "name": "mapvisualization",
+  "version": "1.0.0",
+  "description": "data processing and map visualzation demo program",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "csv-parser": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shimada",
+  "license": "ISC"
+}

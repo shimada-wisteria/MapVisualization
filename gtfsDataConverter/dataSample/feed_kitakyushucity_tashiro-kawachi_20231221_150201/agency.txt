@@ -1,0 +1,2 @@
+"agency_id","agency_name","agency_url","agency_timezone","agency_lang","agency_phone","agency_fare_url"
+"5290801003473","田代・河内地区おでかけ交通","https://www.city.kitakyushu.lg.jp/ken-to/08000009.html","Asia/Tokyo","ja","093-662-2310",""

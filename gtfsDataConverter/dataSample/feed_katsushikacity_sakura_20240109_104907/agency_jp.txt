@@ -1,0 +1,2 @@
+﻿agency_id,agency_official_name,agency_zip_number,agency_address
+6011801011369_1,日立自動車交通株式会社,120-0005,東京都足立区綾瀬6-11-22

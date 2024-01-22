@@ -1,0 +1,2 @@
+﻿agency_id,agency_name,agency_url,agency_timezone,agency_lang,agency_phone
+6011801011369_1,日立自動車交通株式会社,https://www.hitachi-gr.com/sakura,Asia/Tokyo,ja,03-5682-1122

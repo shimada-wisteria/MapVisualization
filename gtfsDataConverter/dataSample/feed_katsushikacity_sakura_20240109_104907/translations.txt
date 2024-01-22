@@ -1,0 +1,29 @@
+﻿table_name,field_name,language,translation,record_id,field_value
+stops,stop_name,ja-Hrkt,ふくろうどう,,ふくろう堂
+stops,stop_name,en,Fukuroudou,,ふくろう堂
+stops,stop_name,ja-Hrkt,ちよだせんあやせえき,,千代田線綾瀬駅
+stops,stop_name,en,Chiyodasen Ayaseeki,,千代田線綾瀬駅
+stops,stop_name,ja-Hrkt,とうぶせんこすげえき,,東武線小菅駅
+stops,stop_name,en,Toubusen Kosugeeki,,東武線小菅駅
+stops,stop_name,ja-Hrkt,れんがどおりちゅうおう,,煉瓦通り中央
+stops,stop_name,en,Rengadoorichuuou,,煉瓦通り中央
+stops,stop_name,ja-Hrkt,まつばらじどうゆうえん,,松原児童遊園
+stops,stop_name,en,Matsubarajidouyuuen,,松原児童遊園
+stops,stop_name,ja-Hrkt,ひかりすとあ,,光ストア
+stops,stop_name,en,Hikarisutoa,,光ストア
+stops,stop_name,ja-Hrkt,いそかわもくざいてん,,磯川木材店
+stops,stop_name,en,Isokawamokuzaiten,,磯川木材店
+stops,stop_name,ja-Hrkt,こすげやっきょく,,小菅薬局
+stops,stop_name,en,Kosugeyakkyoku,,小菅薬局
+stops,stop_name,ja-Hrkt,どてしかいいん,,土手歯科医院
+stops,stop_name,en,Doteshikaiin,,土手歯科医院
+stops,stop_name,ja-Hrkt,こすげさんちょうめ,,小菅三丁目
+stops,stop_name,en,Kosugesanchoume,,小菅三丁目
+stops,stop_name,ja-Hrkt,のざきいいん,,野崎医院
+stops,stop_name,en,Nozakiiin,,野崎医院
+routes,route_long_name,ja-Hrkt,さくら,,さくら
+routes,route_long_name,en,Sakura,,さくら
+agency,agency_name,ja-Hrkt,ひたちじどうしゃこうつうかぶしきがいしゃ,6011801011369_1,
+agency,agency_name,en,Hitachi Jidousha Koutsu,6011801011369_1,
+trips,trip_headsign,ja-Hrkt,じゅんかんせん,,循環線
+trips,trip_headsign,en,Junkansen,,循環線

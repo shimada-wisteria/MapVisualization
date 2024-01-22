@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Leaflet</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+	<style>
+		body { margin:0; padding:0; }
+		#map { position:absolute; top:0; bottom:0; width:100%; }
+	</style>
+</head>
+<body>
+<div id='map'></div>
+<script>
+	const par = {lon: 139.44288869, lat: 35.39291572, zoom: 7, minZoom: 5, maxZoom: 18, map: 'CJD', mapDivId: 'map'};
+	const pointStyle = {radius:3, color:"#ff0000", opacity:1};
+	const otherStyle = {weight:2, color:"#00ff00", opacity:1};
+
+	const CJD_URL = 'https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png'
+	const CJD_ATTR = '<a href="https://maps.gsi.go.jp/development/ichiran.html">地理院タイル</a>'
+
+	const baseMaps = {
+		'CJD': {
+			url: CJD_URL,
+			attribution: CJD_ATTR,
+			maxNativeZoom: 18 }
+	};
+
+	Object.keys(baseMaps).forEach((name) => {
+		const layer = {...baseMaps[name], minZoom: par['minZoom'], maxZoom: par['maxZoom']};
+		baseMaps[name] = L.tileLayer(layer.url, layer);
+	});
+
+	const mapOption = {center: [par['lat'], par['lon']], zoom: par['zoom'], layers: baseMaps[par['map']]};
+	const map = L.map(par['mapDivId'], mapOption);
+	L.control.layers(baseMaps).addTo(map);
+	L.control.scale().addTo(map);
+	map.createPane("pane620").style.zIndex = 620;
+	const dropArea = document.getElementById(par['mapDivId']);
+
+	dropArea.ondragover = () => {
+		return false;
+	};
+	dropArea.ondragend = () => {
+		return false;
+	};
+	dropArea.ondrop = (event) => {
+		readFiles(event.dataTransfer.files);
+		event.preventDefault();
+		return false;
+	};
+
+	const readFiles = (files) => {
+		const bounds = Array.prototype.map.call(files, readFile);
+		Promise.all(bounds).then(bounds => {map_fitBounds(bounds);});
+	}
+
+	const readFile = (file) => {
+		const {fname, fileExtension} = fileName(file);
+		return new Promise((resolve, reject) => {
+				const reader = new FileReader();
+				reader.readAsText(file, 'utf-8');
+				reader.onload = (event) => {
+					try {
+						const result = event.target.result;
+						const bounds = map_addData(readData(result, fileExtension));
+						resolve(bounds);
+					} catch (err) {
+						console.log(`${fname}: ${err}`);
+					}
+				};
+		});
+	}
+
+	const readData = (result, fileExtension) => {
+		const data = {"geojson": {"type":"FeatureCollection", "features": []}};
+		switch (fileExtension){
+			case "json":
+			case "geojson":
+				data["geojson"] = JSON.parse(result);
+				break;
+		}
+		return data;
+	}
+
+	const style = (feature) => {
+		if (feature.geometry.type=="Point" || feature.geometry.type=="MultiPoint") {
+			return {radius:pointStyle["radius"], fillColor:pointStyle["color"], fillOpacity:pointStyle["opacity"], weight:0, color:"#000000", opacity:0};
+		} else {
+			return {...otherStyle, fillColor: otherStyle["color"], fillOpacity: otherStyle["opacity"]*0.5};
+		}
+	}
+
+	const map_addData = (data) => {
+		const layerOptions = {
+			style: style,
+			pointToLayer: (feature, latlng) => {
+				return L.circleMarker(latlng, {pane: "pane620"});
+			},
+		};
+		const layer = L.geoJSON(data["geojson"], layerOptions);
+		layer.addTo(map);
+		return layer.getBounds();
+	}
+
+	const map_fitBounds = (bounds) => {
+		const bounds_merged = bounds.pop();
+		bounds.forEach(bb => bounds_merged.extend(bb))
+		if (bounds_merged.isValid()) map.fitBounds(bounds_merged);
+	}
+
+	const fileName = (file) => {
+		const fname = file.name;
+		const fileExtension = fname.split('.').pop();
+		return {fname, fileExtension};
+	}
+</script>
+</body>
+</html>

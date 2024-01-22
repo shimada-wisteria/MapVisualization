@@ -1,0 +1,16 @@
+{
+  "agency": "agency.txt",
+  "calendar_dates": "calendar_dates.txt",
+  "calendar": "calendar.txt",
+  "fare_attributes": "fare_attributes.txt",
+  "fare_rules": "fare_rules.txt",
+  "feed_info": "feed_info.txt",
+  "office_jp": "office_jp.txt",
+  "routes": "routes.txt",
+  "shapes": "shapes.txt",
+  "stop_times": "stop_times.txt",
+  "stops": "stops.txt",
+  "transfers": "transfers.txt",
+  "translations": "translations.txt",
+  "trips": "trips.txt"
+}
