@@ -9,9 +9,9 @@ step2では、jsonデータを実際にwebアプリ上で可視化します。
 [geojsonプロット地図表示 https://shimada-wisteria.github.io/MapVisualization/visualization/](https://shimada-wisteria.github.io/MapVisualization/visualization/)
 
 サンプルのgeojsonファイルは以下のURLにアクセス後、右クリックメニューから「名前を付けて保存」を選択し、ダウンロードしてください。  
-[サンプル1（福岡県北九州市）](https://shimada-wisteria.github.io/MapVisualization/visualization/feed_katsushikacity_sakura_20240109_104907.geojson)  
-[サンプル2（福岡県北九州市）](https://shimada-wisteria.github.io/MapVisualization/visualization/feed_kitakyushucity_okura_20231221_150210.geojson)  
-[サンプル3（東京都瑞穂町）](https://shimada-wisteria.github.io/MapVisualization/visualization/feed_mizuhotown_communitybus_20231020_160021.geojson)  
+[サンプル1（福岡県北九州市）](https://shimada-wisteria.github.io/MapVisualization/gtfsDataConverter/convert/feed_katsushikacity_sakura_20240109_104907.geojson)  
+[サンプル2（福岡県北九州市）](https://shimada-wisteria.github.io/MapVisualization/gtfsDataConverter/convert/feed_kitakyushucity_okura_20231221_150210.geojson)  
+[サンプル3（東京都瑞穂町）](https://shimada-wisteria.github.io/MapVisualization/gtfsDataConverter/convert/feed_mizuhotown_communitybus_20231020_160021.geojson)  
 
 # データ処理の使用方法
 ## 環境の構築
